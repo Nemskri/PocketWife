@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pocketWife",
+    "slug": "pocketWife",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pocketWife"
+}

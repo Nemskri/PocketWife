@@ -1,0 +1,1 @@
+const LANDING_TEXT = 'Its your Money Own it.'
