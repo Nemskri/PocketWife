@@ -48,7 +48,7 @@ function Tab() {
       })}
     >
       <Tab.Screen
-        name="Insights"
+        name="Insight"
         component={Insights}
         options={{
           headerShown: false,
