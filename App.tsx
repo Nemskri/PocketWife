@@ -1,14 +1,13 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
-import LockScreen from "./src/Screens/LockScreen";
-import { persistor, store } from "./src/services/redux";
 import { PersistGate } from "redux-persist/integration/react";
 import LandingScreen from "./src/Screens/LandingScreen";
+import LockScreen from "./src/Screens/LockScreen";
 import Tab from "./src/components/Tab";
+import { persistor, store } from "./src/services/redux";
 
 const Stack = createNativeStackNavigator();
 
