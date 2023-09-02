@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
-import { Image, Platform, StyleSheet, View } from "react-native";
+import { Image } from "react-native";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -8,11 +8,6 @@ import {
 import Home from "../Screens/Home";
 import Insights from "../Screens/Insights";
 import Options from "../Screens/Options";
-import Animated, {
-  useSharedValue,
-  withSpring,
-  useAnimatedStyle,
-} from "react-native-reanimated";
 
 function Tab() {
   const Tab = createBottomTabNavigator();
@@ -23,28 +18,38 @@ function Tab() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconSource;
+          let colour;
           if (route.name === "Home") {
             iconSource = require("../assets/icons/Home.png");
           } else if (route.name === "Settings") {
             iconSource = require("../assets/icons/SettingsIcon.png");
           } else {
-            iconSource = require("../assets/icons/INsightsIcon.png");
+            iconSource = require("../assets/icons/InsightsIcon.png");
           }
-          return <Image source={iconSource} />;
+          return (
+            <Image
+              style={{
+                width: wp(10),
+                height: wp(10),
+                tintColor: focused ? "pink" : "gray",
+              }}
+              source={iconSource}
+            />
+          );
         },
         tabBarStyle: {
-          height: Platform.OS === "ios" ? hp(10) : hp(10),
-          borderTopWidth: 0,
-          backgroundColor: "#ffffff",
+          height: hp(10),
+          padding: hp(1),
           elevation: 5,
         },
-        tabBarIconStyle: { marginBottom: hp(1), top: hp(1) },
+        tabBarIconStyle: {},
         tabBarLabelStyle: {
-          fontSize: 12,
-          paddingVertical: hp(0.5),
+          fontSize: wp(4),
+          padding: hp(1),
+          fontFamily: "Lora-Bold",
         },
-        tabBarActiveTintColor: "black",
-        tabBarInactiveTintColor: "#36364D",
+        tabBarActiveTintColor: "pink",
+        tabBarInactiveTintColor: "gray",
       })}
     >
       <Tab.Screen
@@ -66,23 +71,14 @@ function Tab() {
         }}
       />
       <Tab.Screen
-        name="Options"
+        name="Settings"
         component={Options}
         options={{
           headerShown: false,
-          tabBarLabel: "Options",
+          tabBarLabel: "Settings",
         }}
       />
     </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  safeArea: {
-    height: hp(100),
-    width: wp(100),
-    backgroundColor: "pink",
-  },
-});
-
 export default Tab;
