@@ -8,6 +8,8 @@ import LandingScreen from "./src/Screens/LandingScreen";
 import LockScreen from "./src/Screens/LockScreen";
 import Tab from "./src/components/Tab";
 import { persistor, store } from "./src/services/redux";
+import InfoScreen from "./src/Screens/InfoScreen";
+import ExpenseScreen from "./src/components/ExpenseForm";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +17,7 @@ const Router = (): JSX.Element => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Tab"
+        initialRouteName="LockScreen"
         screenOptions={{
           headerShown: false,
         }}
@@ -23,6 +25,7 @@ const Router = (): JSX.Element => {
         <Stack.Screen name="LockScreen" component={LockScreen} />
         <Stack.Screen name="LandingScreen" component={LandingScreen} />
         <Stack.Screen name="Tab" component={Tab} />
+        <Stack.Screen name="InfoScreen" component={InfoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

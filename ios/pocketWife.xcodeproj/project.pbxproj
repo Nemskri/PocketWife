@@ -14,6 +14,14 @@
 		96905EF65AED1B983A6B3ABC /* libPods-pocketWife.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-pocketWife.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		E3361B2A23994AD298B76362 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA55C1A646E34CAF99D7637A /* Lora-Bold.ttf */; };
+		99124B1A0207410E977D6C19 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 245A86F9015746F1ADC76DB6 /* Lora-BoldItalic.ttf */; };
+		C044DFD217DA454EA11225BD /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99103970AE5E4E7E9E5C85EE /* Lora-Italic.ttf */; };
+		404CE1F2AE594878A65A0FA6 /* Lora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03D41968F5FF412982DBA0A2 /* Lora-Medium.ttf */; };
+		155A198D9F4644F3A7A6330C /* Lora-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D5252425A49488F9F21AEB7 /* Lora-MediumItalic.ttf */; };
+		A213BAC342BE4FD599948AEE /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 338C0EAAB3114908B8A70EC2 /* Lora-Regular.ttf */; };
+		5DB768641D724C63AB8ADFE8 /* Lora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DBE0C9E92F741E7AF1EEC81 /* Lora-SemiBold.ttf */; };
+		F6957919D4CC4DAAAEFE0B7A /* Lora-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9F4CF306F9041CA880F415B /* Lora-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-pocketWife/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		AA55C1A646E34CAF99D7637A /* Lora-Bold.ttf */ = {isa = PBXFileReference; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		245A86F9015746F1ADC76DB6 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Lora-BoldItalic.ttf"; path = "../assets/fonts/Lora-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		99103970AE5E4E7E9E5C85EE /* Lora-Italic.ttf */ = {isa = PBXFileReference; name = "Lora-Italic.ttf"; path = "../assets/fonts/Lora-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03D41968F5FF412982DBA0A2 /* Lora-Medium.ttf */ = {isa = PBXFileReference; name = "Lora-Medium.ttf"; path = "../assets/fonts/Lora-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D5252425A49488F9F21AEB7 /* Lora-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Lora-MediumItalic.ttf"; path = "../assets/fonts/Lora-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		338C0EAAB3114908B8A70EC2 /* Lora-Regular.ttf */ = {isa = PBXFileReference; name = "Lora-Regular.ttf"; path = "../assets/fonts/Lora-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1DBE0C9E92F741E7AF1EEC81 /* Lora-SemiBold.ttf */ = {isa = PBXFileReference; name = "Lora-SemiBold.ttf"; path = "../assets/fonts/Lora-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D9F4CF306F9041CA880F415B /* Lora-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Lora-SemiBoldItalic.ttf"; path = "../assets/fonts/Lora-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
+				61B084E4C86F4559AADDFA97 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -130,6 +147,22 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
+		};
+		61B084E4C86F4559AADDFA97 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AA55C1A646E34CAF99D7637A /* Lora-Bold.ttf */,
+				245A86F9015746F1ADC76DB6 /* Lora-BoldItalic.ttf */,
+				99103970AE5E4E7E9E5C85EE /* Lora-Italic.ttf */,
+				03D41968F5FF412982DBA0A2 /* Lora-Medium.ttf */,
+				3D5252425A49488F9F21AEB7 /* Lora-MediumItalic.ttf */,
+				338C0EAAB3114908B8A70EC2 /* Lora-Regular.ttf */,
+				1DBE0C9E92F741E7AF1EEC81 /* Lora-SemiBold.ttf */,
+				D9F4CF306F9041CA880F415B /* Lora-SemiBoldItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -194,6 +227,14 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
+				E3361B2A23994AD298B76362 /* Lora-Bold.ttf in Resources */,
+				99124B1A0207410E977D6C19 /* Lora-BoldItalic.ttf in Resources */,
+				C044DFD217DA454EA11225BD /* Lora-Italic.ttf in Resources */,
+				404CE1F2AE594878A65A0FA6 /* Lora-Medium.ttf in Resources */,
+				155A198D9F4644F3A7A6330C /* Lora-MediumItalic.ttf in Resources */,
+				A213BAC342BE4FD599948AEE /* Lora-Regular.ttf in Resources */,
+				5DB768641D724C63AB8ADFE8 /* Lora-SemiBold.ttf in Resources */,
+				F6957919D4CC4DAAAEFE0B7A /* Lora-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +349,7 @@
 				INFOPLIST_FILE = pocketWife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-                                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -332,7 +373,7 @@
 				INFOPLIST_FILE = pocketWife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-                                MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
+import React, { useEffect } from "react";
 import { Image } from "react-native";
 import {
   heightPercentageToDP as hp,
@@ -8,9 +8,23 @@ import {
 import Home from "../Screens/Home";
 import Insights from "../Screens/Insights";
 import Options from "../Screens/Options";
+import { useDispatch, useSelector } from "react-redux";
+import { userDataType } from "../services/redux";
 
 function Tab() {
+  type RootState = {
+    userData: userDataType;
+  };
+
+  const dispatch = useDispatch();
+  const userData = useSelector((state: RootState) => state.userData);
+
+  useEffect(() => {
+    console.log({ userData });
+  }, []);
+
   const Tab = createBottomTabNavigator();
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -18,7 +32,6 @@ function Tab() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconSource;
-          let colour;
           if (route.name === "Home") {
             iconSource = require("../assets/icons/Home.png");
           } else if (route.name === "Settings") {
@@ -29,27 +42,28 @@ function Tab() {
           return (
             <Image
               style={{
-                width: wp(10),
-                height: wp(10),
-                tintColor: focused ? "pink" : "gray",
+                width: focused ? wp(11) : wp(8),
+                height: focused ? wp(11) : wp(8),
+                tintColor: focused ? "white" : "black",
               }}
               source={iconSource}
             />
           );
         },
         tabBarStyle: {
-          height: hp(10),
+          backgroundColor: "#FC7FB6",
+          height: hp(12),
           padding: hp(1),
           elevation: 5,
         },
         tabBarIconStyle: {},
         tabBarLabelStyle: {
-          fontSize: wp(4),
+          fontSize: wp(3.5),
           padding: hp(1),
           fontFamily: "Lora-Bold",
         },
         tabBarActiveTintColor: "pink",
-        tabBarInactiveTintColor: "gray",
+        tabBarInactiveTintColor: "black",
       })}
     >
       <Tab.Screen
@@ -57,7 +71,7 @@ function Tab() {
         component={Insights}
         options={{
           headerShown: false,
-          tabBarLabel: "Insights",
+          // tabBarLabel: "Insights",
           unmountOnBlur: true,
         }}
       />
@@ -67,7 +81,7 @@ function Tab() {
         options={{
           headerShown: false,
           unmountOnBlur: true,
-          tabBarLabel: "Home",
+          // tabBarLabel: "Home",
         }}
       />
       <Tab.Screen
@@ -75,7 +89,7 @@ function Tab() {
         component={Options}
         options={{
           headerShown: false,
-          tabBarLabel: "Settings",
+          // tabBarLabel: "Settings",
         }}
       />
     </Tab.Navigator>

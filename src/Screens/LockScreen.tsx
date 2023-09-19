@@ -14,10 +14,12 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { useDispatch, useSelector } from "react-redux";
-import { clearPin, killStore, storePin } from "../services/redux";
+import { clearPin, killStore, storePin, userDataType } from "../services/redux";
 
 type RootState = {
   pin: number | null;
+  newUser: boolean;
+  userData: userDataType;
 };
 
 export default function LockScreen({ navigation }) {
@@ -25,16 +27,22 @@ export default function LockScreen({ navigation }) {
   const [pinFlag, setPinFlag] = useState(false);
   const dispatch = useDispatch();
   const securityPin = useSelector((state: RootState) => state.pin);
+  const isNewUSer = useSelector((state: RootState) => state.newUser);
+  const userData = useSelector((state: RootState) => state.userData);
+
   const handleChange = (text: string) => {
     setPin(text);
   };
 
+  console.log({ userData });
+
   const validatePin = () => {
     if (securityPin) {
-      // securityPin === pin
-      //   ?
-      navigation.navigate("LandingScreen");
-      // : Alert.alert("Wrong Pin Adu");
+      if (securityPin === pin) {
+        userData.userName === ""
+          ? navigation.navigate("InfoScreen")
+          : navigation.navigate("Tab");
+      }
     } else {
       dispatch(storePin(pin));
     }
@@ -44,8 +52,7 @@ export default function LockScreen({ navigation }) {
   useEffect(() => {
     console.log({ securityPin });
     securityPin !== null ? setPinFlag(true) : setPinFlag(false);
-
-    // dispatch(killStore());    //!This will Clear the Redux Store
+    // dispatch(killStore()); //!This will Clear the Redux Store
   }, [pinFlag, securityPin]);
 
   return (

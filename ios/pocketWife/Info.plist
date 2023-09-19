@@ -49,9 +49,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>UIStatusBarStyle</key>
-  <string>UIStatusBarStyleDefault</string>
-  <key>CADisableMinimumFrameDurationOnPhone</key>
-  <true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lora-Bold.ttf</string>
+		<string>Lora-BoldItalic.ttf</string>
+		<string>Lora-Italic.ttf</string>
+		<string>Lora-Medium.ttf</string>
+		<string>Lora-MediumItalic.ttf</string>
+		<string>Lora-Regular.ttf</string>
+		<string>Lora-SemiBold.ttf</string>
+		<string>Lora-SemiBoldItalic.ttf</string>
+	</array>
 </dict>
 </plist>

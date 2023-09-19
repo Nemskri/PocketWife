@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity, View, Text, Image } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -8,8 +8,12 @@ import {
 interface HeaderProps {
   navigation: any;
   headerText: string;
-  backgroundColor: string;
+  backgroundColor?: string;
 }
+
+const xml = `<svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.67 1.87001L8.9 0.100006L-1 10L8.9 19.9L10.67 18.13L2.54 10L10.67 1.87001Z" fill="#D9D9D9"/>
+</svg>`;
 
 const Header: React.FC<HeaderProps> = ({
   navigation,
@@ -23,7 +27,10 @@ const Header: React.FC<HeaderProps> = ({
           navigation.goBack();
         }}
       >
-        <Image source={require("../assets/icons/back.png")} />
+        <Image
+          source={require("../assets/images/Back.png")}
+          style={{ height: hp(3), width: hp(3) }}
+        />
       </TouchableOpacity>
       <Text style={styles.headerText}>{headerText}</Text>
     </View>
@@ -35,14 +42,15 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: hp(1),
+    padding: hp(2),
     zIndex: 1,
+    columnGap: hp(2),
   },
   headerText: {
-    fontSize: wp(6),
-    fontWeight: "600",
-    color: "#212126",
+    fontSize: hp(4),
+    color: "white",
     width: wp(90),
+    fontFamily: "Lora-Bold",
   },
 });
 
