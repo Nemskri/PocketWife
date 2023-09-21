@@ -10,7 +10,7 @@ function LandingScreen({ navigation }) {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate("Tab");
-    }, 1000);
+    }, 5000);
   }, []);
 
   return (
@@ -38,19 +38,17 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     margin: 0,
     padding: 0,
-    // backgroundColor: "black",
     position: "relative",
   },
   text: {
-    // textAlign: "justify"
+    fontFamily: "Lora-Bold",
     fontSize: hp(8),
     color: "#56413d",
-    fontWeight: "700",
   },
   textColored: {
-    fontSize: hp(8),
+    fontFamily: "Lora-Bold",
+    fontSize: hp(9),
     color: "green",
-    fontWeight: "700",
   },
   btn: {
     position: "absolute",

@@ -8,6 +8,7 @@ import {
   StatusBar,
   TouchableOpacity,
   Alert,
+  ToastAndroid,
 } from "react-native";
 import {
   heightPercentageToDP as hp,
@@ -25,6 +26,8 @@ type RootState = {
 export default function LockScreen({ navigation }) {
   const [pin, setPin] = useState(null);
   const [pinFlag, setPinFlag] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const dispatch = useDispatch();
   const securityPin = useSelector((state: RootState) => state.pin);
   const isNewUSer = useSelector((state: RootState) => state.newUser);
@@ -45,22 +48,31 @@ export default function LockScreen({ navigation }) {
       }
     } else {
       dispatch(storePin(pin));
+      setSuccess(true);
     }
     setPin("");
   };
 
   useEffect(() => {
-    console.log({ securityPin });
     securityPin !== null ? setPinFlag(true) : setPinFlag(false);
     // dispatch(killStore()); //!This will Clear the Redux Store
   }, [pinFlag, securityPin]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      error && setError(false);
+      success && setSuccess(false);
+    }, 2000);
+  }, [error, success]);
 
   return (
     <ImageBackground source={require("../assets/images/bg.jpg")}>
       <StatusBar backgroundColor={"purple"} />
       <View style={styles.container}>
-        <Text style={styles.h1Text}>
-          {securityPin ? "Enter Security Pin" : "Generate New Pin"}
+        {error && <Toast text="Incorrect Pin!" type="error" />}
+        {success && <Toast text="New Pin Generated" type="success" />}
+        <Text numberOfLines={2} style={styles.h1Text}>
+          {securityPin ? "Enter Security Pin" : "Let's Set Up Your New Pin!"}
         </Text>
         <TextInput
           style={styles.input}
@@ -79,7 +91,6 @@ export default function LockScreen({ navigation }) {
             style={pinFlag ? styles.button : styles.btnDisabled}
             onPress={() => {
               dispatch(clearPin());
-              console.log("Reset");
             }}
             disabled={securityPin === null && true}
             activeOpacity={1}
@@ -102,8 +113,11 @@ const styles = StyleSheet.create({
     rowGap: hp(5),
   },
   h1Text: {
+    width: wp(60),
     color: "#FFEFDA",
     fontSize: hp(4),
+    fontFamily: "Lora-Bold",
+    textAlign: "center",
   },
   input: {
     height: hp(5),
@@ -137,8 +151,8 @@ const styles = StyleSheet.create({
     marginTop: hp(2),
   },
   btnText: {
-    fontSize: wp(4),
-    fontWeight: "700",
+    fontFamily: "Lora-Bold",
+    fontSize: wp(4.5),
     color: "#FFEFDA",
   },
 });

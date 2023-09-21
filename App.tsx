@@ -18,6 +18,7 @@ const Router = (): JSX.Element => {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="LockScreen"
+        initialRouteName="LockScreen"
         screenOptions={{
           headerShown: false,
         }}

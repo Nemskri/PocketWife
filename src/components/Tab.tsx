@@ -1,12 +1,12 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React, { useEffect } from "react";
-import { Image } from "react-native";
+import React from "react";
+import { Image, TouchableOpacity, View } from "react-native";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
-import Home from "../Screens/Home";
 import Insights from "../Screens/Insights";
+import Home from "../Screens/Home";
 import Options from "../Screens/Options";
 import { useDispatch, useSelector } from "react-redux";
 import { userDataType } from "../services/redux";
@@ -30,7 +30,7 @@ function Tab() {
       initialRouteName="Home"
       backBehavior="history"
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused }) => {
           let iconSource;
           if (route.name === "Home") {
             iconSource = require("../assets/icons/Home.png");
@@ -40,14 +40,23 @@ function Tab() {
             iconSource = require("../assets/icons/InsightsIcon.png");
           }
           return (
-            <Image
+            <View
               style={{
-                width: focused ? wp(11) : wp(8),
-                height: focused ? wp(11) : wp(8),
-                tintColor: focused ? "white" : "black",
+                alignItems: "center",
+                justifyContent: "center",
+                width: wp(15),
+                height: hp(8),
               }}
-              source={iconSource}
-            />
+            >
+              <Image
+                style={{
+                  width: wp(7),
+                  height: wp(7),
+                  tintColor: focused ? "pink" : "gray",
+                }}
+                source={iconSource}
+              />
+            </View>
           );
         },
         tabBarStyle: {
@@ -61,6 +70,8 @@ function Tab() {
           fontSize: wp(3.5),
           padding: hp(1),
           fontFamily: "Lora-Bold",
+          paddingBottom: hp(1),
+          textTransform: "uppercase",
         },
         tabBarActiveTintColor: "pink",
         tabBarInactiveTintColor: "black",
