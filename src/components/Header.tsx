@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ navigation, headerText }) => {
         }}
       >
         <Image
-          source={require("../assets/icons/back.png")}
+          source={require("../assets/icons/BackBtn")}
           style={{ width: wp(10), height: wp(10) }}
         />
       </TouchableOpacity>

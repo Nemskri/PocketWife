@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import {
   SafeAreaView,
-  Text,
-  View,
-  TextInput,
-  Button,
   StyleSheet,
+  Text,
+  TextInput,
   TouchableOpacity,
+  View,
 } from "react-native";
-import { Formik } from "formik";
-import * as yup from "yup";
-import Header from "../components/Header";
 import {
-  widthPercentageToDP as wp,
   heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../components/Header";
 import {
   BankAccount,
   CurrentBalance,
@@ -76,7 +73,7 @@ const InfoScreen = ({ navigation }) => {
               style={styles.input}
               onChangeText={setName}
               value={userName}
-              placeholder={userData.userName}
+              placeholder={userData.userName || "Name"}
             />
           </View>
           <View>
@@ -85,7 +82,7 @@ const InfoScreen = ({ navigation }) => {
               style={styles.input}
               onChangeText={setBank}
               value={bankAccount}
-              placeholder={userData.bankAccount}
+              placeholder={userData.bankAccount || "Bank Account Name/No."}
             />
           </View>
 
@@ -96,7 +93,9 @@ const InfoScreen = ({ navigation }) => {
               onChangeText={setBalance}
               value={currentBalance}
               keyboardType="numeric"
-              placeholder={userData.currentBalance.toString()}
+              placeholder={
+                userData?.currentBalance?.toString() || "Enter Balance"
+              }
             />
           </View>
           <View>
@@ -106,7 +105,9 @@ const InfoScreen = ({ navigation }) => {
               onChangeText={setMonthlyIncome}
               value={income}
               keyboardType="numeric"
-              placeholder={userData.income.toString()}
+              placeholder={
+                userData?.income?.toString() || "Enter monthly Income"
+              }
             />
           </View>
         </View>

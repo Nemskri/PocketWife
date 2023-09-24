@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import React from "react";
+import React, { useEffect } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 import {
   heightPercentageToDP as hp,

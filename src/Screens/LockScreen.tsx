@@ -16,6 +16,7 @@ import {
 } from "react-native-responsive-screen";
 import { useDispatch, useSelector } from "react-redux";
 import { clearPin, killStore, storePin, userDataType } from "../services/redux";
+import Toast from "../components/Toast";
 
 type RootState = {
   pin: number | null;
@@ -37,18 +38,18 @@ export default function LockScreen({ navigation }) {
     setPin(text);
   };
 
-  console.log({ userData });
-
   const validatePin = () => {
     if (securityPin) {
       if (securityPin === pin) {
-        userData.userName === ""
+        userData.userName === undefined
           ? navigation.navigate("InfoScreen")
           : navigation.navigate("Tab");
+      } else {
+        setError(true);
       }
     } else {
-      dispatch(storePin(pin));
       setSuccess(true);
+      dispatch(storePin(pin));
     }
     setPin("");
   };
@@ -69,8 +70,16 @@ export default function LockScreen({ navigation }) {
     <ImageBackground source={require("../assets/images/bg.jpg")}>
       <StatusBar backgroundColor={"purple"} />
       <View style={styles.container}>
-        {error && <Toast text="Incorrect Pin!" type="error" />}
-        {success && <Toast text="New Pin Generated" type="success" />}
+        <View
+          style={{
+            width: wp(100),
+            height: hp(100),
+            position: "absolute",
+          }}
+        >
+          {error && <Toast text="Incorrect Pin!" type="error" />}
+          {success && <Toast text="New Pin Generated" type="success" />}
+        </View>
         <Text numberOfLines={2} style={styles.h1Text}>
           {securityPin ? "Enter Security Pin" : "Let's Set Up Your New Pin!"}
         </Text>
